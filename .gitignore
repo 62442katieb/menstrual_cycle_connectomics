@@ -4,3 +4,6 @@
 .ipynb_checkpoints/
 **.DS_Store
 **.png
+**.json
+**.csv
+**.svg

@@ -30,8 +30,8 @@ warnings.simplefilter("ignore")
 today = datetime.today()
 today_str = strftime("%m_%d_%Y")
 
-TRAIN_DSET = "/Users/katherine.b/Dropbox/Data/ds002674"
-TEST_DSET = "/Users/katherine.b/Dropbox/Data/diva-dset"
+TRAIN_DSET = "/home/data/ds002674"
+TEST_DSET = "/home/data/diva-dset"
 DERIV_NAME = "IDConn"
 OUTCOME = "bc"
 CONFOUNDS = ["framewise_displacement"]
@@ -39,7 +39,7 @@ TASK = "rest"
 ATLAS = "craddock2012"
 THRESH = 0.5
 alpha = 0.01
-atlas_fname = "/Users/katherine.b/Dropbox/HPC-Backup-083019/physics-retrieval/craddock2012_tcorr05_2level_270_2mm.nii.gz"
+atlas_fname = "/home/data/craddock2012_tcorr05_2level_270_2mm.nii.gz"
 
 
 layout = bids.BIDSLayout(TRAIN_DSET, derivatives=True)
