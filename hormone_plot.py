@@ -69,7 +69,7 @@ def calc_fd(confounds):
 sns.set(font_scale=1.2, style='ticks', context='paper')
 crayons = sns.crayon_palette(['Cotton Candy', 'Carnation Pink', 'Salmon', 'Pink Sherbert'])
 
-ppt_pal = sns.color_palette(['#685690', '#EA6964', '#33ACE3', '#4AB62C', ])
+ppt_pal = sns.color_palette(['#685690', '#33ACE3', '#4AB62C', '#EA6964',  ])
 
 import json
 # Opening JSON file 
@@ -92,17 +92,17 @@ andme_df = pd.read_table(join(andme, 'participants.tsv'), index_col=[0,1])
 
 diva_df.rename(
     {
-        'Blossom': 'sub-02',
-        'Bubbles': 'sub-03',
-        'Buttercup': 'sub-04',
+        'Blossom': 'sub-04',
+        'Bubbles': 'sub-02',
+        'Buttercup': 'sub-03',
     }, 
     inplace=True
 )
 
 diva_mapping = {
-    'Blossom': 'sub-02',
-    'Bubbles': 'sub-03',
-    'Buttercup': 'sub-04',
+    'Blossom': 'sub-04',
+    'Bubbles': 'sub-02',
+    'Buttercup': 'sub-03',
     '01': 'sub-01'
 }
 
@@ -206,17 +206,17 @@ drop = ppt_df.filter(regex='ses.*b',axis=0).index
 
 temp_df = ppt_df.drop(drop, axis=0).copy()
 
-temp_df.at[('sub-04', 'ses-01'), 'cycle_day'] = 25
-temp_df.at[('sub-04', 'ses-01b'), 'cycle_day'] = 28
-temp_df.at[('sub-04', 'ses-02'), 'cycle_day'] = 3
-temp_df.at[('sub-04', 'ses-02b'), 'cycle_day'] = 6
-temp_df.at[('sub-04', 'ses-03'), 'cycle_day'] = 10
-temp_df.at[('sub-04', 'ses-03b'), 'cycle_day'] = 13
+temp_df.at[('sub-03', 'ses-01'), 'cycle_day'] = 25
+temp_df.at[('sub-03', 'ses-01b'), 'cycle_day'] = 28
+temp_df.at[('sub-03', 'ses-02'), 'cycle_day'] = 3
+temp_df.at[('sub-03', 'ses-02b'), 'cycle_day'] = 6
+temp_df.at[('sub-03', 'ses-03'), 'cycle_day'] = 10
+temp_df.at[('sub-03', 'ses-03b'), 'cycle_day'] = 13
 
-temp_df.at[('sub-04', 'ses-04'), 'cycle_day'] = 17
-temp_df.at[('sub-04', 'ses-04b'), 'cycle_day'] = 20
-temp_df.at[('sub-04', 'ses-05a'), 'cycle_day'] = 24
-temp_df.at[('sub-04', 'ses-05'), 'cycle_day'] = 27
+temp_df.at[('sub-03', 'ses-04'), 'cycle_day'] = 17
+temp_df.at[('sub-03', 'ses-04b'), 'cycle_day'] = 20
+temp_df.at[('sub-03', 'ses-05a'), 'cycle_day'] = 24
+temp_df.at[('sub-03', 'ses-05'), 'cycle_day'] = 27
 
 temp_df['HCUse'] = temp_df['HCUse'].replace({0: 'Yes', 1: 'No'})
 
