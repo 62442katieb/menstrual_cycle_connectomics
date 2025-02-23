@@ -207,9 +207,14 @@ cat_sim_z = np.arctanh(cat_sim.replace(1,0))
 cat_sim_z.replace(0, np.nan, inplace=True)
 
 
-
+ppt_order = ['01', 'Bubbles', 'Buttercup', 'Blossom']
 fig,ax = plt.subplots(figsize=(8, 8))
-sns.heatmap(cat_sim_z, square=True, cmap='Spectral_r', cbar_kws={"shrink": .75})
+sns.heatmap(
+    cat_sim_z.loc[ppt_order][ppt_order], 
+    square=True, 
+    cmap='Spectral_r', 
+    cbar_kws={"shrink": .75}
+)
 plt.tight_layout(w_pad=0.6)
 ax.set_xlabel('')
 ax.set_ylabel('')
